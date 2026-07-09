@@ -4,6 +4,7 @@ __pycache__/
 
 # Virtual Environment
 venv/
+env/
 
 # Environment Variables
 .env
@@ -11,12 +12,17 @@ venv/
 # Database
 lyrics.db
 
-# Exported Files
-exports/
+# Flask
+instance/
 
 # VS Code
 .vscode/
 
-# OS Files
+# macOS
 .DS_Store
-Thumbs.db
+
+# Exports
+exports/
+
+# Logs
+*.log
