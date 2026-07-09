@@ -112,6 +112,10 @@
 
 </div>
 
+<script id="genre-data" type="application/json">{{ genre_stats | tojson }}</script>
+
+<script id="mood-data" type="application/json">{{ mood_stats | tojson }}</script>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>

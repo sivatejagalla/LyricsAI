@@ -293,7 +293,7 @@ def get_genre_stats():
 
     connection.close()
 
-    return rows
+    return [dict(row) for row in rows]
 
 
 def get_mood_stats():
@@ -314,4 +314,4 @@ def get_mood_stats():
 
     connection.close()
 
-    return rows
+    return [dict(row) for row in rows]
