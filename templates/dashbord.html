@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>📊 Analytics Dashboard</h1>
+
+    <p class="hero-text">
+        AI-powered insights from your song analysis history
+    </p>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-4 mb-4">
+
+        <div class="info-card text-center">
+
+            <h2>{{ stats.total }}</h2>
+
+            <h5>Total Songs</h5>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mb-4">
+
+        <div class="info-card text-center">
+
+            <h2>{{ stats.favorites }}</h2>
+
+            <h5>Favorite Songs</h5>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mb-4">
+
+        <div class="info-card text-center">
+
+            <h2>{{ stats.status }}</h2>
+
+            <h5>Database Status</h5>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-4 mb-4">
+
+        <div class="info-card text-center">
+
+            <h2>{{ stats.top_genre }}</h2>
+
+            <h5>Top Genre</h5>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mb-4">
+
+        <div class="info-card text-center">
+
+            <h2>{{ stats.top_mood }}</h2>
+
+            <h5>Top Mood</h5>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mb-4">
+
+        <div class="info-card text-center">
+
+            <h2>{{ stats.latest }}</h2>
+
+            <h5>Latest Song</h5>
+
+        </div>
+
+    </div>
+
+</div>
+
+<hr class="text-white">
+
+<h2 class="text-center mb-4">
+
+📈 Analytics Charts
+
+</h2>
+
+<div class="glass-card">
+
+    <canvas id="genreChart"></canvas>
+
+</div>
+
+<div class="glass-card mt-4">
+
+    <canvas id="moodChart"></canvas>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+{% endblock %}

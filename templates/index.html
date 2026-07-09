@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>🎵 LyricsAI</h1>
+
+    <p class="hero-text">
+        Analyze any song lyrics using Artificial Intelligence
+    </p>
+
+</div>
+
+<div class="glass-card">
+
+    <form method="POST">
+
+        <label class="form-label">
+            Paste Song Lyrics
+        </label>
+
+        <textarea
+            class="form-control lyric-box"
+            rows="12"
+            name="lyrics"
+            placeholder="Paste your lyrics here..."
+            required></textarea>
+
+        <button
+            id="analyzeBtn"
+            class="btn btn-primary btn-lg w-100 mt-4"
+            type="submit">
+
+            🚀 Analyze Lyrics
+
+        </button>
+
+    </form>
+
+</div>
+
+{% if result %}
+
+<div class="glass-card mt-5">
+
+    <h2 class="mb-4">
+
+        🎼 Analysis Result
+
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+
+                <h5>🎵 Title</h5>
+
+                <p>{{ result.title }}</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+
+                <h5>🎤 Artist</h5>
+
+                <p>{{ result.artist }}</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+
+                <h5>💿 Album</h5>
+
+                <p>{{ result.album }}</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+
+                <h5>🎼 Genre</h5>
+
+                <p>{{ result.genre }}</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+
+                <h5>😊 Mood</h5>
+
+                <p>{{ result.mood }}</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+
+                <h5>📅 Release Year</h5>
+
+                <p>{{ result.release_year }}</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="summary-card mt-4">
+
+        <h4>📝 Summary</h4>
+
+        <p>{{ result.summary }}</p>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

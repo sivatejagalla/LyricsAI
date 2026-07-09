@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>🎵 Song Details</h1>
+
+    <p class="hero-text">
+        Complete AI analysis of the selected song
+    </p>
+
+</div>
+
+<div class="glass-card">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+                <h5>🎵 Title</h5>
+                <p>{{ song.title }}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+                <h5>🎤 Artist</h5>
+                <p>{{ song.artist }}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+                <h5>💿 Album</h5>
+                <p>{{ song.album }}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+                <h5>📅 Release Year</h5>
+                <p>{{ song.release_year }}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+                <h5>🎼 Genre</h5>
+                <p>{{ song.genre }}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+                <h5>😊 Mood</h5>
+                <p>{{ song.mood }}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+                <h5>🎭 Emotion</h5>
+                <p>{{ song.emotion }}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+                <h5>🧠 Theme</h5>
+                <p>{{ song.theme }}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+                <h5>🌍 Language</h5>
+                <p>{{ song.language }}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="info-card">
+                <h5>⭐ Confidence</h5>
+                <p>{{ song.confidence }}</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="summary-card mt-4">
+
+        <h4>📝 Summary</h4>
+
+        <p>{{ song.summary }}</p>
+
+    </div>
+
+    <div class="mt-4 text-center">
+
+        <a href="/history" class="btn btn-primary">
+            ⬅ Back to History
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>📜 Analysis History</h1>
+
+    <p class="hero-text">
+        View and manage all analyzed songs
+    </p>
+
+</div>
+
+<form method="GET" action="/history" class="mb-4">
+
+    <input
+        type="text"
+        class="form-control"
+        name="search"
+        placeholder="Search title, artist or genre">
+
+</form>
+
+<div class="glass-card">
+
+    <table class="table table-dark table-hover">
+
+        <thead>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Genre</th>
+                <th>Mood</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for song in history %}
+
+            <tr>
+
+                <td>{{ song.id }}</td>
+                <td>{{ song.title }}</td>
+                <td>{{ song.artist }}</td>
+                <td>{{ song.genre }}</td>
+                <td>{{ song.mood }}</td>
+
+                <td>
+
+                    <a href="/song/{{ song.id }}"
+                       class="btn btn-primary btn-sm">
+                        👁 View
+                    </a>
+
+                    <a href="/favorite/{{ song.id }}"
+                       class="btn btn-warning btn-sm">
+                        ⭐ Favorite
+                    </a>
+
+                    <a href="/delete/{{ song.id }}"
+                       class="btn btn-danger btn-sm"
+                       onclick="return confirm('Delete this song?');">
+                        🗑 Delete
+                    </a>
+
+                </td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}
