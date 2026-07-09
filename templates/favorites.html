@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>❤️ Favorite Songs</h1>
+
+    <p class="hero-text">
+        Your saved favorite lyric analyses
+    </p>
+
+</div>
+
+{% if songs %}
+
+<div class="row">
+
+{% for song in songs %}
+
+<div class="col-md-6 mb-4">
+
+    <div class="glass-card">
+
+        <h3>{{ song.title }}</h3>
+
+        <p><strong>Artist:</strong> {{ song.artist }}</p>
+        <p><strong>Genre:</strong> {{ song.genre }}</p>
+        <p><strong>Mood:</strong> {{ song.mood }}</p>
+
+        <a href="/song/{{ song.id }}" class="btn btn-primary">
+            View Details
+        </a>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% else %}
+
+<div class="glass-card text-center">
+
+    <h3>No favorite songs yet ❤️</h3>
+
+    <p>Add songs to favorites from the History page.</p>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
